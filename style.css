@@ -1,0 +1,30 @@
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.calc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+div, button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 30px;
+    border: solid black 1px;
+}
