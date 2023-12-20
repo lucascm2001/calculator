@@ -12,19 +12,49 @@ body {
 }
 .calc {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     flex-wrap: wrap;
     gap: 10px;
-
+    max-width: 300px;
+    border: solid black 1px;
 }
 
-div, button {
+.display {
+    border: solid black 1px;
+    min-width: 250px;
+    min-height: 50px;
+    font-size: 40px;
+
+    display: flex;
+    justify-content: right;
+    align-items: last baseline;
+}
+
+.non-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 300px;
+}
+
+button {
     display: flex;
     justify-content: center;
     align-items: center;
 
 
-    min-width: 60px;
-    min-height: 60px;
+    min-width: 70px;
+    min-height: 70px;
     font-size: 30px;
     border: solid black 1px;
+    border-radius: 5px;
+}
+
+.equals {
+    background-color: rgba(0, 0, 255, 0.443);
+    color: white;
 }

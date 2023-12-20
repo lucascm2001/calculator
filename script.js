@@ -70,46 +70,80 @@ numbers.forEach((number, index) => {
             }
             display.textContent += index;
         }
-
-
-        /*
-        if (operation === null) {
-            //string number together
-        }
-
-
-        if (firstNum !== null) secondNum = index;
-        else firstNum = index;
-        */
     });
 });
 
 plus.addEventListener('click', () => {
     // operation becomes the function from above
-    operation = add;
-    display.textContent += '+';
+    
+    if (firstNum !== null && operation !== null && secondNum !== null) {
+        firstNum = operate(Number(firstNum), Number(secondNum), operation);
+        secondNum = null;
+        operation = add;
+        display.textContent = firstNum + '+';
+    }
+    else {
+        operation = add;
+        display.textContent += '+';
+    }
+
+    // all three not null, do equals
+    
+
 });
 
 minus.addEventListener('click', () => {
     // operation becomes the function from above
-    operation = subtract;
-    display.textContent += '-';
+    if (firstNum !== null && operation !== null && secondNum !== null) {
+        firstNum = operate(Number(firstNum), Number(secondNum), operation);
+        secondNum = null;
+        operation = subtract;
+        display.textContent = firstNum + '-';
+    }
+    else {
+        operation = subtract;
+        display.textContent += '-';
+    }
 
 });
 
 times.addEventListener('click', () => {
     // operation becomes the function from above
-    operation = multiply;
+    if (firstNum !== null && operation !== null && secondNum !== null) {
+        firstNum = operate(Number(firstNum), Number(secondNum), operation);
+        secondNum = null;
+        operation = multiply;
+        display.textContent = firstNum + '*';
+    }
+    else {
+        operation = multiply;
+        display.textContent += '*';
+    }
 });
 
 divides.addEventListener('click', () => {
     // operation becomes the function from above
-    operation = divide;
+    if (firstNum !== null && operation !== null && secondNum !== null) {
+        firstNum = operate(Number(firstNum), Number(secondNum), operation);
+        secondNum = null;
+        operation = divide;
+        display.textContent = firstNum + '/';
+    }
+    else {
+        operation = divide;
+        display.textContent += '/';
+    }
 });
 
 equals.addEventListener('click', () => {
     // operation becomes the function from above
-    display.textContent = operate(Number(firstNum), Number(secondNum), operation);
+    if (firstNum !== null && operation !== null && secondNum !== null) {
+        firstNum = operate(Number(firstNum), Number(secondNum), operation);
+        operation = null;
+        secondNum = null;
+        display.textContent = firstNum;
+    }
+
 });
 
 clear.addEventListener('click', () => {
